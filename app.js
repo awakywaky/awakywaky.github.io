@@ -52,5 +52,15 @@ new Vue({
   mounted() {
     this.loadCats();
     this.$refs.main.addEventListener("scroll", this.handleScroll);
+
+    const savedTab = localStorage.getItem("activeTab");
+    if (savedTab) {
+      this.activeTab = savedTab;
+    }
+  },
+  watch: {
+    activeTab(newTab) {
+      localStorage.setItem("activeTab", newTab);
+    },
   },
 });
