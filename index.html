@@ -56,7 +56,12 @@
                   fill="#F24E1E"
                 />
               </svg>
-              <svg v-else width="40" height="37" viewBox="0 0 40 37">
+              <svg
+                v-else
+                width="40"
+                height="37"
+                viewBox="0 0 40 37"
+              >
                 <path
                   d="M20 36.7L17.1 34.06C6.8 24.72 0 18.56 0 11C0 4.84 4.84 0 11 0C14.48 0 17.82 1.62 20 4.18C22.18 1.62 25.52 0 29 0C35.16 0 40 4.84 40 11C40 18.56 33.2 24.72 22.9 34.08L20 36.7Z"
                   fill="#F24E1E"
@@ -75,10 +80,18 @@
             class="gallery__item gallery__item--selected"
           >
             <img :src="cat.url" alt="Cat" class="gallery__image" />
-            <button
-              class="gallery__button"
-              @click="toggleFavorite(cat)"
-            ></button>
+            <button class="gallery__button" @click="toggleFavorite(cat)">
+              <svg
+                width="40"
+                height="37"
+                viewBox="0 0 40 37"
+              >
+                <path
+                  d="M20 36.7L17.1 34.06C6.8 24.72 0 18.56 0 11C0 4.84 4.84 0 11 0C14.48 0 17.82 1.62 20 4.18C22.18 1.62 25.52 0 29 0C35.16 0 40 4.84 40 11C40 18.56 33.2 24.72 22.9 34.08L20 36.7Z"
+                  fill="#FF3A00"
+                />
+              </svg>
+            </button>
           </div>
         </div>
         <p v-if="isLoading" class="loading-text">
