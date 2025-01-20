@@ -27,6 +27,15 @@ new Vue({
         this.isLoading = false;
       }
     },
+    handleScroll() {
+      const main = this.$refs.main;
+      if (
+        main.scrollTop + main.clientHeight >= main.scrollHeight - 100 &&
+        !this.isLoading
+      ) {
+        this.loadCats();
+      }
+    },
     toggleFavorite(cat) {
       const index = this.favoriteCats.findIndex((fav) => fav.id === cat.id);
       if (index === -1) {
